@@ -1,0 +1,3 @@
+# Basic Layout interface for organize and read books, comics and mangas.
+Layout inspired by NETFLIX, but with the intention of organizing files for reading such as comics, books and mangas.
+A real project would make it possible to open files or redirect to programs that read files in, pdf, cbr, ebook among others. 
