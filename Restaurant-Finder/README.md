@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Google API integration
+React application to find restaurants on Google API...
+
 ## Available Scripts
 
 In the project directory, you can run:
