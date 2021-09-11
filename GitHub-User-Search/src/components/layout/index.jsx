@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "../";
+import { Header } from "../../components";
 import * as S from "./styled";
 
 const Layout = ({ children }) => {

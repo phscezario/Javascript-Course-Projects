@@ -1,5 +1,5 @@
 import React from "react";
-import { StatusCount, UserInfos } from "../";
+import { StatusCount, UserInfos } from "../../components";
 import useGithub from "../../hooks/github-hooks";
 import * as S from "./styled";
 
