@@ -1,0 +1,27 @@
+#player {
+	width:200px;
+	height:66px;
+	position:absolute;
+	left:5px;
+	top:179px;
+    background:url(../images/heli.png);
+
+}
+.playerIdle {
+	background:url(../images/heli.png);
+	animation:playPlayerIdle .2s steps(4) infinite;
+}
+
+.playerGetHit {
+	animation:playGetHit .2s 3;
+}
+
+@keyframes playPlayerIdle {
+	from {background-position:0;}
+	to {background-position:800px;}
+}
+
+@keyframes playGetHit {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}

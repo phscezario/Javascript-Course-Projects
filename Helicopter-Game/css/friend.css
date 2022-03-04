@@ -1,0 +1,17 @@
+#friend {
+	width:24px;
+	height:51px;
+	position:absolute;
+	left:5px;
+	bottom:120px;
+    background:url(../images/friend.png);
+
+}
+.friendIdle {
+	background:url(../images/friend.png);
+	animation:playFriendIdle 1s steps(8) infinite;
+}
+@keyframes playFriendIdle {
+	from {background-position:0;}
+	to {background-position:192px;}
+}

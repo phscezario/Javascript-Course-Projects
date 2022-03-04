@@ -1,0 +1,24 @@
+.explosion {
+	width:191px;
+	height:182px;
+	position:absolute;
+    background:url(../images/explosion.png) no-repeat;
+	animation:playExplosion .2s steps(7);
+
+}
+.friend-dead {
+	width:61px;
+	height:55px;
+	position:absolute;
+    background:url(../images/friend-explosion.png);
+
+	animation:playFriendDead .2s steps(5);
+}
+@keyframes playExplosion {
+	from {background-position:0;}
+	to {background-position:-1343px;}
+}
+@keyframes playFriendDead {
+	from {background-position:0;}
+	to {background-position:-306px;}
+}

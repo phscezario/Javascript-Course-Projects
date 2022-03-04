@@ -1,0 +1,17 @@
+#enemy1 {
+	width:190px;
+	height:102px;
+	position:absolute;
+	right:5px;
+	top:179px;
+    background:url(../images/enemy1.png);
+
+}
+.enemy1Idle {
+	background:url(../images/enemy1.png);
+	animation:playEnemy1Idle .2s steps(2) infinite;
+}
+@keyframes playEnemy1Idle {
+	from {background-position:0;}
+	to {background-position:380px;}
+}

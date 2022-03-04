@@ -4,4 +4,4 @@
 
 #### I made a frontend that reads character quotes from an API 
 
-This project was based on teacher Nathally Souza's class at a DIO Bootcamp.
+This project was based on teacher Nathally Souza class at a DIO Bootcamp.
