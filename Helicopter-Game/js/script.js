@@ -313,6 +313,8 @@
         lostFriends = 0;
         savedFriends = 0;
         playerLife = 150;
+        enemy1Speed = -5;
+        enemy2Speed = -3;
         start();
     }
 
