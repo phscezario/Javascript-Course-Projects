@@ -95,7 +95,7 @@ let playGame = () => {
 
     time = Number(
         prompt(
-            'Input a number to spawn enemy speed, minimal recommended 100\n Bigger then 500 = Easy\n Bigger then 250 = Normal\n Less then 150 = Hard',
+            'Input a number to light time on, minimal recommended 100\n Bigger then 500 = Easy\n Bigger then 250 = Normal\n Less then 150 = Hard',
         ),
     );
 
