@@ -6,4 +6,4 @@ This project was based on teacher Denilson Bonatti class at a DIO Bootcamp.
 
 The whole project was done differently, especially the life and collision system.
 
-<a href="https://phscezario.github.io/Javascript-Course-Projects/Helicopter-Game/" target="_blank">Click here to preview...</a>
+<a href="https://phscezario.github.io/Javascript-Course-Projects/Helicopter-Game/">Click here to preview...</a>

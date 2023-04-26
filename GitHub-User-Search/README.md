@@ -4,4 +4,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 React application to find gitHub user...
 
-See APP page here: <a href="https://phscezario.github.io/Javascript-Course-Projects/GitHub-User-Search/build/" target="_blank">Click here to preview...</a>
+See APP page here: <a href="https://phscezario.github.io/Javascript-Course-Projects/GitHub-User-Search/build/">Click here to preview...</a>
