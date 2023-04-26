@@ -3,7 +3,7 @@ let clickedOrder = [];
 let score = 0;
 let time = 250;
 
-//0 - green 
+//0 - green
 //1 - red
 //2 - yellow
 //3 - blue
@@ -19,11 +19,11 @@ let shuffleOrder = () => {
     order[order.length] = currentOrder;
     clickedOrder = [];
 
-    for(let i in order) {
+    for (let i in order) {
         let elementColor = createColorElement(order[i]);
-        
+
         setTimeout(() => {
-            lightColor(elementColor, (Number(i) + 1));
+            lightColor(elementColor, Number(i) + 1);
         });
     }
 };
@@ -41,14 +41,14 @@ let lightColor = (el, num) => {
 
 // check order clicks
 let checkOrder = () => {
-    for(let i in clickedOrder) {
-        if(clickedOrder[i] != order[i]) {
+    for (let i in clickedOrder) {
+        if (clickedOrder[i] != order[i]) {
             gameOver();
-            break
+            break;
         }
     }
 
-    if(clickedOrder.length == order.length) {
+    if (clickedOrder.length == order.length) {
         alert(`Score: ${score}\n You win! Starting another level`);
         nextLevel();
     }
@@ -67,9 +67,9 @@ let click = (color) => {
 
 // function color returned
 let createColorElement = (color) => {
-    if(color == 0) return green;
-    else if(color == 1) return red;
-    else if(color == 2) return yellow;
+    if (color == 0) return green;
+    else if (color == 1) return red;
+    else if (color == 2) return yellow;
     else if (color == 3) return blue;
 };
 
@@ -93,9 +93,13 @@ let playGame = () => {
     alert('Welcome to Genius game! Starting Game');
     score = 0;
 
-    time = Number(prompt('Selected game speed, minimal recommended 100\n Easy > 500\n Normal > 250\n Hard < 150'));
+    time = Number(
+        prompt(
+            'Input a number to spawn enemy speed, minimal recommended 100\n Bigger then 500 = Easy\n Bigger then 250 = Normal\n Less then 150 = Hard',
+        ),
+    );
 
-    if(isNaN(time) || time <= 0) {
+    if (isNaN(time) || time <= 0) {
         time = 250;
         alert(`You don't entry a acceptable number, game default speed selected`);
     }
