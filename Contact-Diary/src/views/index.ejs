@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('includes/head'); %>
+    <body>
+        <%- include('includes/nav'); %>
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8 my-3">
+                    <h1 class="text-center">Contact Diary</h1>
+                    <% if(user) { %>
+                    <h4 class="text-center"><%- user.email %></h4>
+                    <p class="text-center lead">See your contacts below.</p>
+                    <% } %> <%- include('includes/messages'); %> <% if (contacts.length > 0) { %>
+                    <div class="responsive-table my-3">
+                        <table class="table">
+                            <% contacts.forEach(contact => { %>
+                            <tr>
+                                <td><%= contact.name %></td>
+                                <td><%= contact.lastName %></td>
+                                <td><%= contact.phone %></td>
+                                <td><%= contact.email %></td>
+                                <td><a href="/contact/edit/<%= contact.id %>">Edit</a></td>
+                                <td><a class="text-danger" href="/contact/delete/<%= contact.id %>">Delete</a></td>
+                            </tr>
+                            <% }) %>
+                        </table>
+                    </div>
+                    <% } else { %>
+                    <p class="text-center lead">You don't have contacts yet.</p>
+                    <% } %>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </body>
+    <%- include('includes/footer'); %>
+</html>
