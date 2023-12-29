@@ -54,8 +54,8 @@ api.use(csrfMiddleware);
 
 api.use(router);
 
-app.on('Connected', () => {
-    app.listen(3000, () => {
+api.on('Connected', () => {
+    api.listen(3000, () => {
         console.log('Access http://localhost:3000');
         console.log('Server start in port: 3000');
     });
