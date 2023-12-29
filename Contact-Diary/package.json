@@ -30,7 +30,8 @@
         "regenerator-runtime": "^0.13.11",
         "serverless-http": "^3.2.0",
         "style-loader": "^3.3.1",
-        "validator": "^13.11.0"
+        "validator": "^13.11.0",
+        "netlify-cli": "^17.10.2"
     },
     "devDependencies": {
         "@babel/cli": "^7.20.7",
