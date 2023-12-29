@@ -54,13 +54,6 @@ api.use(csrfMiddleware);
 
 api.use(router);
 
-api.on('Connected', () => {
-    api.listen(3000, () => {
-        console.log('Access http://localhost:3000');
-        console.log('Server start in port: 3000');
-    });
-});
-
-api.use('/api/', router.router);
+api.use('/api/', router);
 
 export const handler = serverless(api);
