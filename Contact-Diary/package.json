@@ -5,7 +5,8 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon --ignore public --ignore frontend",
+        "start": "pm2 start serve.js",
+        "start-local": "nodemon --ignore public --ignore frontend",
         "dev": "webpack -w"
     },
     "keywords": [],
@@ -24,6 +25,7 @@
         "express-session": "^1.17.3",
         "helmet": "^7.1.0",
         "mongoose": "^8.0.3",
+        "pm2": "^5.3.0",
         "regenerator-runtime": "^0.13.11",
         "style-loader": "^3.3.1",
         "validator": "^13.11.0"
