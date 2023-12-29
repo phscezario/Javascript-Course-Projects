@@ -5,14 +5,15 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "pm2 start server.js",
-        "start-local": "nodemon --ignore public --ignore frontend",
+        "start": "nodemon --ignore public --ignore frontend",
         "dev": "webpack -w"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@netlify/functions": "^2.4.1",
+        "@types/express": "^4.17.21",
         "bcryptjs": "^2.4.3",
         "connect-flash": "^0.1.1",
         "connect-mongo": "^5.1.0",
@@ -25,8 +26,8 @@
         "express-session": "^1.17.3",
         "helmet": "^7.1.0",
         "mongoose": "^8.0.3",
-        "pm2": "^5.3.0",
         "regenerator-runtime": "^0.13.11",
+        "serverless-http": "^3.2.0",
         "style-loader": "^3.3.1",
         "validator": "^13.11.0"
     },
