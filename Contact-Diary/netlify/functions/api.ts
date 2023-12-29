@@ -54,4 +54,6 @@ app.use(csrfMiddleware);
 
 app.use(router);
 
+app.use('/api/', router);
+
 export const handler = serverless(app);
