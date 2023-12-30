@@ -54,6 +54,6 @@ api.use(csrfMiddleware);
 
 api.use(router);
 
-api.use('/api/', express.Router());
+api.use('/.netlify/functions/', router);
 
 export const handler = serverless(api);
