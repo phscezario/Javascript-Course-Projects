@@ -10,9 +10,9 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const mongoStore = require('connect-mongo');
 const flashMessages = require('connect-flash');
-const router = require('./router');
+const router = require('../../router');
 const csrf = require('csurf');
-const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
+const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('../../src/middlewares/middleware');
 
 const sessionOptions = session({
     secret: process.env.SESSIONSECRET,
