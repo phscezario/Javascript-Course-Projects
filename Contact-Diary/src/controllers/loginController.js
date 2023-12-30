@@ -1,7 +1,7 @@
 const Login = require('../models/LoginModel');
 
 exports.index = (req, res) => {
-    if (req.session.user) return res.redirect('/');
+    if (req.session.user) return res.redirect(process.env.BASEURL + '/');
     return res.render('login');
 };
 
@@ -13,14 +13,14 @@ exports.register = async (req, res) => {
         if (login.errors.length > 0) {
             req.flash('errors', login.errors);
             req.session.save(() => {
-                return res.redirect('/login');
+                return res.redirect(process.env.BASEURL + '/login');
             });
             return;
         }
 
         req.flash('success', 'User created');
         req.session.save(() => {
-            return res.redirect('/login');
+            return res.redirect(process.env.BASEURL + '/login');
         });
         return;
     } catch (e) {
@@ -37,14 +37,14 @@ exports.login = async (req, res) => {
         if (login.errors.length > 0) {
             req.flash('errors', login.errors);
             req.session.save(() => {
-                return res.redirect('/login');
+                return res.redirect(process.env.BASEURL + '/login');
             });
             return;
         }
 
         req.session.user = login.user;
         req.session.save(() => {
-            return res.redirect('/');
+            return res.redirect(process.env.BASEURL + '/');
         });
         return;
     } catch (e) {
@@ -55,5 +55,5 @@ exports.login = async (req, res) => {
 
 exports.logout = (req, res) => {
     req.session.destroy();
-    res.redirect('/login');
+    res.redirect(process.env.BASEURL + '/login');
 };

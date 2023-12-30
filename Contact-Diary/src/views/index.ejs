@@ -20,8 +20,14 @@
                                 <td><%= contact.lastName %></td>
                                 <td><%= contact.phone %></td>
                                 <td><%= contact.email %></td>
-                                <td><a href="/contact/edit/<%= contact.id %>">Edit</a></td>
-                                <td><a class="text-danger" href="/contact/delete/<%= contact.id %>">Delete</a></td>
+                                <td><a href="<%= process.env.BASEURL %>/contact/edit/<%= contact.id %>">Edit</a></td>
+                                <td>
+                                    <a
+                                        class="text-danger"
+                                        href="<%= process.env.BASEURL %>/contact/delete/<%= contact.id %>"
+                                        >Delete</a
+                                    >
+                                </td>
                             </tr>
                             <% }) %>
                         </table>

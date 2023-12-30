@@ -9,5 +9,4 @@
   to = "/.netlify/functions/api/:splat"
 [build]
   functions = "/netlify/functions"
-  included_files = ["./src/**"]
-  publish = "./"
+  publish = "/frontend"

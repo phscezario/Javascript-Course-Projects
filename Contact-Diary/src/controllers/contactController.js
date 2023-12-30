@@ -12,14 +12,14 @@ exports.register = async (req, res) => {
         if (contact.errors.length > 0) {
             req.flash('errors', contact.errors);
             req.session.save(() => {
-                return res.redirect('/contact');
+                return res.redirect(process.env.BASEURL + '/contact');
             });
             return;
         }
 
         req.flash('success', 'Contact registered.');
         req.session.save(() => {
-            return res.redirect('/');
+            return res.redirect(process.env.BASEURL + '/');
         });
         return;
     } catch (e) {
@@ -49,14 +49,14 @@ exports.update = async (req, res) => {
         if (contact.errors.length > 0) {
             req.flash('errors', contact.errors);
             req.session.save(() => {
-                return res.redirect('/contact');
+                return res.redirect(process.env.BASEURL + '/contact');
             });
             return;
         }
 
         req.flash('success', 'Contact updated.');
         req.session.save(() => {
-            return res.redirect(`/contact/edit/${contact.contact._id}`);
+            return res.redirect(process.env.BASEURL + `/contact/edit/${contact.contact._id}`);
         });
         return;
     } catch (e) {

@@ -4,6 +4,8 @@ Course projects and bootcamps
 
 ### See the DEMO of some projects directly
 
+<a href="https://contact-diary-paulo-cezario.netlify.app/api/">Contact Diary</a>
+
 <a href="https://restaurant-finder-paulo-cezario.netlify.app/">Restaurant Finder</a>
 
 <a href="https://app-ifood-interface-paulo-cezario.netlify.app">App iFood Interface Clone</a>

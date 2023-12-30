@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Contact Diary</a>
+        <a class="navbar-brand" href="<%= process.env.BASEURL %>/">Contact Diary</a>
         <button
             class="navbar-toggler"
             type="button"
@@ -16,15 +16,15 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <% if(user) { %>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/login/logout">Logout</a>
+                    <a class="nav-link" aria-current="page" href="<%= process.env.BASEURL %>/login/logout">Logout</a>
                 </li>
                 <% } else { %>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/login">Login</a>
+                    <a class="nav-link" aria-current="page" href="<%= process.env.BASEURL %>/login">Login</a>
                 </li>
                 <% } %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">Add Contact</a>
+                    <a class="nav-link" href="<%= process.env.BASEURL %>/contact">Add Contact</a>
                 </li>
             </ul>
         </div>

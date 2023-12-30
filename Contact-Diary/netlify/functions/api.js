@@ -33,7 +33,7 @@ mongoose
     })
     .catch((e) => console.log('Database Connetion Error... ' + e));
 
-api.set('views', path.resolve(__dirname, 'src', 'views'));
+api.set('views', path.resolve(__dirname, '..', '..', 'src', 'views'));
 api.set('view engine', 'ejs');
 
 api.use(sessionOptions);
@@ -42,7 +42,7 @@ api.use(helmet());
 
 api.use(express.urlencoded({ extended: true }));
 api.use(express.json());
-api.use(express.static(path.resolve(__dirname, 'public')));
+api.use(express.static(path.resolve(__dirname, '..', '..', 'public')));
 
 api.use(flashMessages());
 
