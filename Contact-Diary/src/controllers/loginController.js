@@ -2,7 +2,7 @@ const Login = require('../models/LoginModel');
 
 exports.index = (req, res) => {
     if (req.session.user) return res.redirect('/');
-    return res.render('login');
+    return res.render('login.ejs');
 };
 
 exports.register = async (req, res) => {
