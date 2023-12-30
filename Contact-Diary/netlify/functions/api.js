@@ -14,6 +14,8 @@ const router = require('../../router');
 const csrf = require('csurf');
 const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('../../src/middlewares/middleware');
 
+const route = express.Router();
+
 const sessionOptions = session({
     secret: process.env.SESSIONSECRET,
     store: mongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
@@ -54,6 +56,6 @@ api.use(csrfMiddleware);
 
 api.use(router);
 
-api.use('/.netlify/functions/', router);
+api.use('/api/', route);
 
 export const handler = serverless(api);
