@@ -1,4 +1,4 @@
-# NodeJS application with Express and MongoDb
+# NodeJS application with Express and MongoDB
 
 <a href="https://contact-diary-paulo-cezario.netlify.app/api/">Click here to preview...</a>
 
