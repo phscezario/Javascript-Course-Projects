@@ -1,5 +1,5 @@
 [functions]
-  external_node_modules = ["express", "ejs", "path"]
+  external_node_modules = ["express", "ejs"]
   node_bundler = "esbuild"
 [[redirects]]
   force = true

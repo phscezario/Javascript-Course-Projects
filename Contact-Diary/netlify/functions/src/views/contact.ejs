@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('includes/head'); %>
+    <body>
+        <%- include('includes/nav'); %>
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8 my-3">
+                    <h1 class="text-center">Edit Contact List</h1>
+
+                    <%- include('includes/messages'); %>
+
+                    <% if(contact._id) { %> 
+                    <form action="/contact/edit/<%= contact.id %>" method="POST">
+                    <% } else { %>
+                    <form action="/contact/register" method="POST">
+                    <% } %>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                aria-describedby="name"
+                                value="<%= contact.name %>"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="lastName"
+                                name="lastName"
+                                value="<%= contact.lastName %>"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input
+                                type="tel"
+                                class="form-control"
+                                id="phone"
+                                name="phone"
+                                value="<%= contact.phone %>"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                value="<%= contact.email %>"
+                            />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </body>
+    <%- include('includes/footer'); %>
+</html>
