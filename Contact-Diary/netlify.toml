@@ -1,9 +1,13 @@
 [functions]
   external_node_modules = ["express", "ejs"]
   node_bundler = "esbuild"
-  included_files = ["src/*"]
+  included_files = ["/src/*"]
 [[redirects]]
   force = true
   from = "/api/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
+[build]
+  functions = "/netlify/functions"
+  included_files = ["/src/*"]
+  publish = "/src/"
