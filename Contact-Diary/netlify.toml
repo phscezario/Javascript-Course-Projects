@@ -5,6 +5,4 @@
   force = true
   from = "/api/*"
   status = 200
-  to = "/.netlify/functions/api/:splat"
-[build]
-  functions = "./netlify/functions"
+  to = "/:splat"
