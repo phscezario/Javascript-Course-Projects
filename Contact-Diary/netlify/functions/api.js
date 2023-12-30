@@ -1,9 +1,11 @@
+import serverless from 'serverless-http';
+
 require('dotenv').config();
 
 const path = require('path');
 const express = require('express');
 const helmet = require('helmet');
-const app = express();
+const api = express();
 const mongoose = require('mongoose');
 const session = require('express-session');
 const mongoStore = require('connect-mongo');
@@ -27,34 +29,31 @@ mongoose
     .connect(process.env.CONNECTIONSTRING)
     .then(() => {
         console.log('Connected to Database!');
-        app.emit('Connected');
+        api.emit('Connected');
     })
     .catch((e) => console.log('Database Connetion Error... ' + e));
 
-app.set('views', path.resolve(__dirname, 'src', 'views'));
-app.set('view engine', 'ejs');
+api.set('views', path.resolve(__dirname, 'src', 'views'));
+api.set('view engine', 'ejs');
 
-app.use(sessionOptions);
+api.use(sessionOptions);
 
-app.use(helmet());
+api.use(helmet());
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static(path.resolve(__dirname, 'public')));
+api.use(express.urlencoded({ extended: true }));
+api.use(express.json());
+api.use(express.static(path.resolve(__dirname, 'public')));
 
-app.use(flashMessages());
+api.use(flashMessages());
 
-app.use(csrf());
+api.use(csrf());
 
-app.use(middlewareGlobal);
-app.use(checkCsrfError);
-app.use(csrfMiddleware);
+api.use(middlewareGlobal);
+api.use(checkCsrfError);
+api.use(csrfMiddleware);
 
-app.use(router);
+api.use(router);
 
-app.on('Connected', () => {
-    app.listen(80, () => {
-        console.log('Access http://localhost');
-        console.log('Server start in port: 80');
-    });
-});
+api.use('/.netlify/functions/', router);
+
+export const handler = serverless(api);
