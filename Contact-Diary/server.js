@@ -1,3 +1,5 @@
+import serverless from 'serverless-http';
+
 require('dotenv').config();
 
 const path = require('path');
@@ -53,8 +55,10 @@ app.use(csrfMiddleware);
 app.use(router);
 
 app.on('Connected', () => {
-    app.listen(3000, () => {
-        console.log('Access http://localhost:3000');
-        console.log('Server start in port: 3000');
+    app.listen(80, () => {
+        console.log('Access http://localhost');
+        console.log('Server start in port: 80');
     });
 });
+
+export const handler = serverless(app);
