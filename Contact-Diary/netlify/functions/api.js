@@ -12,6 +12,7 @@ const mongoStore = require('connect-mongo');
 const flashMessages = require('connect-flash');
 const router = require('../../router');
 const csrf = require('csurf');
+const ejs = require('ejs');
 const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('../../src/middlewares/middleware');
 
 const sessionOptions = session({
@@ -34,7 +35,7 @@ mongoose
     .catch((e) => console.log('Database Connetion Error... ' + e));
 
 api.set('views', path.resolve(__dirname, 'src', 'views'));
-api.set('view engine', 'ejs');
+api.set('view engine', ejs);
 
 api.use(sessionOptions);
 
